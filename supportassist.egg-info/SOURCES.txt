@@ -1,0 +1,9 @@
+README.md
+setup.py
+src/__init__.py
+src/supportassist/__init__.py
+supportassist.egg-info/PKG-INFO
+supportassist.egg-info/SOURCES.txt
+supportassist.egg-info/dependency_links.txt
+supportassist.egg-info/requires.txt
+supportassist.egg-info/top_level.txt
