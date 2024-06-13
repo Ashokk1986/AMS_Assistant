@@ -1,9 +1,10 @@
 openai
 langchain
+pinecone
 streamlit
 python-dotenv
 PyPDF2
-
-
+pypdf
+langchain_pinecone
 
 -e .
