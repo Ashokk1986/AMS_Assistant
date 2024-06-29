@@ -1,4 +1,4 @@
-# Import necessary modules
+## Import Libraries
 import os
 import streamlit as st
 from pinecone import Pinecone
@@ -9,21 +9,24 @@ from langchain_pinecone import PineconeVectorStore
 from dotenv import load_dotenv
 from langchain_openai import OpenAIEmbeddings
 
-## Read variables from from env file
+## Read variables from env file
 load_dotenv()  
 OPENAI_KEY=os.getenv("OPENAI_API_KEY")
 PINECONE_API_KEY=os.getenv("PINECONE_API_KEY")
 PINECONE_INDEX=os.getenv("PINECONE_INDEX_NAME")
 
-# Set up the Streamlit framework
-st.title('AMS Assist Application')  # Set the title of the Streamlit app
-#create a form using st.form
+## Set up the Streamlit framework
+## Set the title of the Streamlit app
+st.title('AMS Assist Application')  
+
+## create form using st.form
 with st.form("user_inputs"):
-    input_text=st.text_input("Ask your question!",max_chars=500)  # Create a text input field in the Streamlit app
-    #Add Button
+    ## Create text input field in the Streamlit app
+    input_text=st.text_input("I am your Support Assist. Ask your question!",max_chars=500)  
+    ## Add Button
     button=st.form_submit_button("Assist Me")
 
-## Pinecone VectorDB initiation, prior to this created pinecone with dimension = 1536
+## Pinecone VectorDB and embedding initiation
 embeddings = OpenAIEmbeddings(api_key=OPENAI_KEY)
 pc = Pinecone(api_key=PINECONE_API_KEY)
 index=pc.Index(PINECONE_INDEX)
